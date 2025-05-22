@@ -1,0 +1,15 @@
+# Simple Flask app to show your model's predictions
+from flask import Flask, render_template
+import yfinance as yf
+import numpy as np
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    # Mock prediction (replace with real model later)
+    prediction = "↑ 85% chance to rise tomorrow"
+    return render_template('index.html', prediction=prediction)
+
+if __name__ == '__main__':
+    app.run(debug=True)
